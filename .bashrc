@@ -9,16 +9,17 @@ test -e /home/public/admin/bashrc && . /home/public/admin/bashrc
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-
+IN="$USER"
+lines=$(echo $IN | tr "." "\n")
+set ${lines}
 #lancement-
 date
-echo -e "${GREEN}[TrixBash]${NC} Bienvenue Dimitri"
+echo -e "${GREEN}[TrixBash]${NC} Bienvenue $1"
 echo -e "${GREEN}€ jhelp ${NC}=> Affiche l'aide des commandes"
 echo ""
 
 
-result=${PWD##*/}          # to assign to a variable
-result=${result:-/}  
+
 
 
 export PS1="${GREEN}[\w]€ ${NC}"
