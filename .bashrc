@@ -12,12 +12,18 @@ NC='\033[0m'
 
 #lancement-
 date
-echo -e "${GREEN}[TrixBash]${NC} Bienvenue Dimitri!"
+echo -e "${GREEN}[TrixBash]${NC} Bienvenue Dimitri"
 echo -e "${GREEN}€ jhelp ${NC}=> Affiche l'aide des commandes"
 echo ""
 
 
-PS1="${GREEN}€ ${NC}"
+result=${PWD##*/}          # to assign to a variable
+result=${result:-/}  
+
+
+export PS1="${GREEN}[\w]€ ${NC}"
+
+#PS1="${GREEN}[$PWD]€ ${NC}"
 
 #-lancement
 
@@ -28,7 +34,7 @@ alias dollar="echo \"dollar is dead\""
 alias c="clear"
 alias b="bash"
 alias cb="c;b"
-
+alias bye="kill -9 -1"
 
 
 
